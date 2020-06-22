@@ -1,0 +1,38 @@
+.nav {
+    grid-area: nav;
+    height: 300px;
+    width: 200px;
+    padding: 20px;
+    border: 1px solid #efefef;
+    background: #fbfbfb;
+    border-radius: 3px;
+}
+
+.nav__item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.nav__item:hover {
+   text-decoration: underline;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding-right: 140px;
+}
+
+
+.active {
+    color: #ffffff;
+    padding: 4px 110px 4px 10px;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.nav__item .active {
+    background: lightslategrey;
+
+}

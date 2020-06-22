@@ -1,0 +1,31 @@
+.profileInfo {
+    border-bottom: 1px solid #efefef;
+}
+
+.profileInfo__img {
+    width: 100%;
+}
+
+.profileInfo__user-logo {
+    margin-right: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://cms.qz.com/wp-content/uploads/2016/08/harleyquinn.jpg?quality=75&strip=all&w=1600&h=900');
+}
+
+.profileInfo__posts {
+    display: flex;
+    padding: 30px 0 30px 20px;
+}
+
+.profileInfo__info {
+
+}
+
+.profileInfo__name {
+    margin-bottom: 10px;
+}

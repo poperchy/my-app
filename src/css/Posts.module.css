@@ -1,0 +1,31 @@
+.posts {
+    padding: 30px 20px 30px 20px;
+}
+
+.create {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 30px;
+}
+
+.title {
+    margin-bottom: 15px;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    border: 1px solid #efefef;
+    background: #099BAA;
+    padding: 10px 20px;
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-left: 15px;
+}

@@ -26,6 +26,9 @@ const Nav = (props) => {
                 <li className='nav__item'>
                     <NavLink className='nav__link' to='/friends'>Friends</NavLink>
                 </li>
+                <li className='nav__item'>
+                    <NavLink className='nav__link' to='/users'>Users</NavLink>
+                </li>
             </ul>
         </nav>
     );

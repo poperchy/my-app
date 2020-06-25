@@ -3,14 +3,15 @@ import s from '../css/Dialogs.module.css'
 import DialogItem from './DialogItem';
 import Message from './Message';
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../redux/message-reducer";
+import {ClassDeclaration as m} from "@babel/types";
 
 
 const Dialogs = (props) => {
 
     let state = props.messagePage;
 
-    let dialogsElements = state.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>);
-    let messagesElements = state.messages.map(message => <Message message={message.message}/>);
+    let dialogsElements = state.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id}/>);
+    let messagesElements = state.messages.map(message => <Message message={message.message} key={message.id}/>);
     let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {

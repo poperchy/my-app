@@ -9,7 +9,7 @@ const Main = (props) => {
     return (
         <section>
             <ProfileInfo/>
-            <PostsContainer store={props.store}/>
+            <PostsContainer />
         </section>
     );
 };

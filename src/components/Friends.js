@@ -5,14 +5,13 @@ import FriendsPhoto from "./FriendsPhoto";
 
 const Friends = (props) => {
 
-    let friendsPhoto = props.state.friendsName.map(photo =>
-        <FriendsPhoto id={photo.id} src={photo.src} name={photo.name}/>);
-    // let friendsName = props.state.friendsName.map(name => <FriendsPhoto src={friendsPhoto.src} name={name.name}/>);
+    // let friendsPhoto = props.state.friendsName.map(photo =>
+    //     <FriendsPhoto id={photo.id} src={photo.src} name={photo.name}/>);
 
     return (
         <div className='friends'>
             <div className='friends__wrap'>
-                {friendsPhoto}
+                {/*{friendsPhoto}*/}
             </div>
         </div>
     );

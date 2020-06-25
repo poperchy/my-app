@@ -1,11 +1,11 @@
-//
-//
-// const friendsReducer = (state, action) => {
-//
-//     if (action.type === ADD_POST) {
-//
-//
-//     return state;
-// };
-//
-// export default friendsReducer();
+    //
+    //
+    // const friendsReducer = (state, action) => {
+    //
+    //     if (action.type === ADD_POST) {
+    //
+    //
+    //         return state;
+    //     };
+    //
+    //     export default friendsReducer();

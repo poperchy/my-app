@@ -4,7 +4,11 @@ import * as axios from 'axios';
 import userPhoto from '../../src/assets/images/user.png';
 
 class Users extends React.Component {
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> 9396fa2... markup users
     componentDidMount() {
         axios.get('https://social-network.samuraijs.com/api/1.0/users')
             .then(response => {

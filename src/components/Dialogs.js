@@ -2,49 +2,53 @@ import React from 'react';
 import s from '../css/Dialogs.module.css'
 import DialogItem from './DialogItem';
 import Message from './Message';
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../redux/message-reducer";
-import {ClassDeclaration as m} from "@babel/types";
+import {Redirect} from "react-router-dom";
+import {Field, reduxForm} from "redux-form";
 
 
 const Dialogs = (props) => {
 
     let state = props.messagePage;
 
-    let dialogsElements = state.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id}/>);
+    let dialogsElements = state.dialogsData.map(dialog => <DialogItem name={dialog.name} key={dialog.id}
+                                                                      id={dialog.id}/>);
     let messagesElements = state.messages.map(message => <Message message={message.message} key={message.id}/>);
     let newMessageBody = state.newMessageBody;
-
-    let onSendMessageClick = () => {
-        props.sendMessage();
+    let AddNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody);
     };
 
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    };
+    if (!props.isAuth) return <Redirect to={"/login"}/>;
 
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItem}>
-                { dialogsElements }
+                {dialogsElements}
             </div>
             <div className={s.messagePull}>
                 <div className={s.messages}>
                     <div>{messagesElements}</div>
                 </div>
-                <div className={s.wrap}>
-                    <textarea className={s.textarea} onChange={onNewMessageChange} value={newMessageBody}
-                              name="textarea" id="textarea"/>
-                    <div className={s.messageArea}>
-                    </div>
-                    <div className={s.messageWrapBtn}>
-                        <button onClick={onSendMessageClick} className={s.messageBtn}>Send</button>
-                    </div>
-                </div>
+                <AddMessageReduxForm onSubmit={AddNewMessage}/>
             </div>
         </div>
     );
 };
+
+const AddMessageForm =(props) =>{
+    return(
+    <form onSubmit={props.handleSubmit}>
+        <div className={s.wrap}>
+            <Field className={s.textarea} component={"textarea"} id="textarea"  value={"newMessageBody"} name={"newMessageBody"} placeholder={"enter you message"}/>
+            <div className={s.messageWrapBtn}>
+                <button className={s.messageBtn}>Send</button>
+            </div>
+        </div>
+    </form>
+    )
+};
+
+const AddMessageReduxForm = reduxForm({form: "dialogAddMessageForm"})(AddMessageForm);
 
 export default Dialogs;
